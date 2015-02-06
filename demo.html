@@ -4,6 +4,7 @@ permalink: /demo.html
 ---
 <style id="custom">
    @import "/mrhyde/cards/css/app.css";
+
   body{
     overflow: auto;
   }
@@ -13,6 +14,16 @@ permalink: /demo.html
       z-index: 1000;
     }
 </style>
+<style id="github-markdown">
+  @import "//cdn.jsdelivr.net/g/github-markdown-css";
+   .markdown-body {
+        min-width: 200px;
+        max-width: 790px;
+        margin: 0 auto;
+        padding: 30px;
+    }
+</style>
+
 <style id="reveal" disabled>
   @import "//cdn.jsdelivr.net/g/reveal.js(css/reveal.min.css+css/theme/night.css)";
  
@@ -34,7 +45,7 @@ permalink: /demo.html
     // The text in demo.json is markdownified by Jekyll
     // it simply returns a block of html
     
-    d3.select( '.content')
+    d3.select( '.markdown-body')
       .html( d ); // update document html
   });
   
@@ -46,14 +57,14 @@ permalink: /demo.html
           StartReveal();
         } else {
           $('.reveal').toggle();
-          $('.content').toggle();
+          $('.markdown-body').toggle();
         }
       });
      
     d3.select('#close')
       .on('click', function(){
         $('.reveal').hide();
-        $('.content').show();
+        $('.markdown-body').show();
       });
     });
   
@@ -73,14 +84,14 @@ permalink: /demo.html
     // tranverse dom to add each slide
     $(h).each( function(){            
       WrapSection( $(this), $(slides), null, 0 );
-      $('.content').hide();
+      $('.markdown-body').hide();
     });
     
     function WrapSection( el, slides, section, flag ){
       // traverse dom node chode children
       if (flag == 0){
         // initiate the slide
-        var section = $('<section></section>')
+        var section = $('<section class="markdown-body"></section>')
                           .appendTo( slides );
       }
       // get tag name of current element
@@ -104,5 +115,5 @@ permalink: /demo.html
 <!-- HTML Structure -->
 {% include controls.html %}
 
-<div class="content row"></div>
+<div class="markdown-body"></div>
 <div class="presentation"></div>
