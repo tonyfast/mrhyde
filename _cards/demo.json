@@ -1,0 +1,76 @@
+---
+layout: markdownify
+title: A demonstration of docfast/mrhyde
+
+tagline: > # show in the blog index
+  The Quickest, Most Minimal Implementation of the Jekyll Machine
+---
+
+# docfast/mrhyde 
+
+A minimal implementation of the Jekyll Machine on Github Pages.
+
+**Less Liquid, More Javascript, Data-Driven**
+
+## Project Goal
+
+* Easily initialize Github Pages
+* Implement the minimal Jekyll machine
+* Create endpoints for YAML front-matter and it's content
+* Identify the roles of Jekyll/Liquid from Javascript/HTML/CSS
+* Client side design
+
+# Closer to Standards
+
+Jekyll uses a structured directory and configured file ``_config.yml`` to
+generate static web content.  The file naming in the Jekyll file structure is largely
+arbitrary.  Each file in the directory is compiled into the static content 
+later.
+
+### One time build
+
+The one time build means that optimizing Liquid syntax will not save much time.  Also,
+the inherent limitations of Liquid make it cumbersome and unreadable in the wrong hands.
+This project empowers the content to be designed in Javascript and access the its wonderful libraries.
+
+## Cards
+
+Cards are pieces of a Jekyll collection.  Any file with YAML front matter in the 
+``_cards`` directory is available at ``http://username.github.io/repo-name/cards/file-name.ext`` as json. 
+
+### Data and Posts
+
+### Jekyll Parsers and Pre-Processors
+
+Jekyll has tools to render ``json``, ``sass``/``scss``, and ``markdown``.
+The parsers are activated with Jekyll layouts.
+
+**jsonify**
+```
+layout: jsonify
+```
+
+**markdownify**
+```
+layout: mardownify
+```
+Mardownify requires liquid to assign a new variable and parse your own JSON.  
+Liquid does not allow the modification of variables.
+
+**sassify**+**scssify**
+```
+layout: sassify # scssify
+```
+This Github pages provides a baked in SASS pre-compiler.  That is awesome right!
+
+
+
+
+
+# Inspirations
+
+* make ``_data`` accessible after compilation 
+
+  _without having to revert to the github repository._
+
+* local and remote compilation.

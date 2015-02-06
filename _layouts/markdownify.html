@@ -2,6 +2,8 @@
 Precompile the rendered Jekyll content
 Structure the output data as you wish and store your
 own mental model.
+
+Return as array to go write into d3.
 {% endcomment %}
 {% assign rendered = page.content | markdownify %}
-{[ {{page | jsonify}} ],[ {{ content | escape | markdownify }} ]}
+{{rendered | jsonify}}

@@ -12,12 +12,14 @@ Use this file to scrape important strings from the Jekyll
 API and pass them to javascript variables you can use later.
 -->
 
-<script src="{{site.baseurl}}/cards/site.js"></script>
+<script src="{{site.baseurl}}/cards/js/site.js"></script>
 
 <script>
   // Display some of the information
   // Scale from the scraped Jekyll data
   ;( function(){
+    //redirect to demo
+    window.location.href = '/mrhyde/demo.html';
     
     d3.select('.content-list')
       .selectAll('li')

@@ -1,0 +1,64 @@
+<style>
+  /**
+  controls{
+    position: fixed;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+  }
+  ul{
+    order: 1;
+  }
+  controls{
+    opacity: .5;
+  }
+  controls:hover{
+    transition:opacity .5s ease-out,opacity .2s ease-in;
+    opacity: .9;
+  }
+  .button{
+    background-color: black;
+  }
+  **/
+  controls{
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    float: right;
+  }
+  controls a.button{
+    background-color: none;
+    width: 100%;
+    opacity: .25;
+    color: black;
+    border: 2px solid;
+  }
+  controls :hover{
+    transition:opacity .5s ease-out,opacity .2s ease-in;
+    opacity: .9;
+  }
+  controls ul{
+    list-style-type: none;
+  }
+</style>
+
+<controls>
+<ul class="site-buttons">
+  <li><a href="#" class="button">Home</a></li>
+  <li><a href="#" class="button">Github</a></li>
+</ul>
+
+<ul class="jekyll-buttons">
+  <li><a href="#" class="button">Cards</a></li>
+  <li><a href="#" class="button">Posts</a></li>
+  <li><a href="#" class="button">Pages</a></li>
+</ul>
+
+<ul class="control-buttons">
+  <li><a href="#" id="present" class="button">Present</a></li>
+  <li><a href="#" class="button">Serialize</a></li>
+  <li><a href="#" class="button">Share</a></li>
+</ul>
+</controls>
